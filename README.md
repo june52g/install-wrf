@@ -45,7 +45,7 @@ $WRF_HOME/compile -j 4 2>&1 | tee compile.log
 ### wps
 * wps를 설치하기 위해 아래 3단계를 참조한다.
 ``` bash
-$WRF_HOME/clean -a
+$WPS_HOME/clean -a
 
 # configure 후 15, 1 선택
 $WPS_HOME/configure 
