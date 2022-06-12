@@ -13,14 +13,15 @@ wget -c https://download.sourceforge.net/libpng/libpng-1.6.37.tar.gz
 wget -c https://www.ece.uvic.ca/~frodo/jasper/software/jasper-1.900.1.zip
 wget -c http://mvapich.cse.ohio-state.edu/download/mvapich/mv2/mvapich2-2.3.7.tar.gz
 
+mkdir -p /wrf/BUILD
+mkdir -p /wrf/Library
+
 # Compilers
 export DIR=/wrf/Library
 export CC=icc
 export FC=ifort
 export F90=ifort
 export CXX=icpc
-
-mkdir -p /wrf/BUILD
 
 # zlib
 cd /wrf/BUILD
