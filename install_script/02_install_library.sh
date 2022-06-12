@@ -3,6 +3,7 @@
 
 /bin/bash -c "source /opt/intel/oneapi/setvars.sh"
 
+mkdir -p /data/downloads
 cd /data/downloads
 wget -c https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.10/hdf5-1.10.5/src/hdf5-1.10.5.tar.gz
 wget -c -O netcdf-c-4.7.1.tar.gz https://github.com/Unidata/netcdf-c/archive/refs/tags/v4.7.1.tar.gz
