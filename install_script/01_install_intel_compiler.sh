@@ -2,8 +2,6 @@
 apt-get update
 apt-get install -y vim-tiny wget sudo make m4 lzip unzip dos2unix sudo
 
-# https://estuarine.jp/2021/03/install-oneapi/
-# Ubuntu 20.04 LTS에 Intel oneAPI (Intel Fortran) 설치
 
 # install intel compiler
 sudo apt-get update
