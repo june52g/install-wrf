@@ -1,7 +1,10 @@
 #!/bin/bash
 ## WRF installation with parallel process.
 
-/bin/bash -c "source /opt/intel/oneapi/setvars.sh"
+# basic package managment
+sudo apt-get update
+sudo apt-get upgrade -y
+sudo apt-get install -y gcc gfortran g++ libtool automake autoconf make m4 grads default-jre csh
 
 mkdir -p /data/downloads
 cd /data/downloads
@@ -88,6 +91,8 @@ make install
 sleep 10
 
 # JasPer
+cd /wrf/BUILD
+cp /data/downloads/jasper-1.900.1.zip /wrf/BUILD
 unzip jasper-1.900.1.zip
 cd jasper-1.900.1/
 autoreconf -i
