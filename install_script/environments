@@ -18,45 +18,48 @@ export MV2_SMP_USE_CMA=0
 
 export WRF_DIR=/wrf/WRF
 export WPS_DIR=/wrf/WPS
+export IPPROOT=/opt/intel/oneapi/ipp/2021.6.0
 
-export LD_LIBRARY_PATH=/wrf/Library/lib:$LD_LIBRARY_PATH
-export PATH=$DIR/bin:$PATH
-
-ulimit -s unlimited
-ulimit -d unlimited
-ulimit -f unlimited
-ulimit -m unlimited
-ulimit -n 7168
-ulimit -Hs unlimited
-ulimit -Ss unlimited
-
-
-# ------
-
-export DIR=/wrf/Library
-
-export CC=icc
-export FC=ifort
-export F90=ifort
-export CXX=icpc
-
-export HDF5=$DIR
-export NETCDF=$DIR
-export JASPERLIB=$DIR/lib
-export JASPERINC=$DIR/include
-
-export CPPFLAGS=-I$DIR/include
-export LDFLAGS=-L$DIR/lib
-export LIBS="-lnetcdf -lhdf5_hl -lhdf5 -lz"
-
-export MV2_SMP_USE_CMA=0
-
-export WRF_DIR=/wrf/WRF
-export WPS_DIR=/wrf/WPS
-
-export PATH=/opt/intel/oneapi/vtune/2022.3.0/bin64:/opt/intel/oneapi/vpl/2022.1.0/bin:/opt/intel/oneapi/mpi/2021.6.0//libfabric/bin:/opt/intel/oneapi/mpi/2021.6.0//bin:/opt/intel/oneapi/mkl/2022.1.0/bin/intel64:/opt/intel/oneapi/itac/2021.6.0/bin:/opt/intel/oneapi/intelpython/latest/bin:/opt/intel/oneapi/intelpython/latest/condabin:/opt/intel/oneapi/inspector/2022.1.0/bin64:/opt/intel/oneapi/dpcpp-ct/2022.1.0/bin:/opt/intel/oneapi/dev-utilities/2021.6.0/bin:/opt/intel/oneapi/debugger/2021.6.0/gdb/intel64/bin:/opt/intel/oneapi/compiler/2022.1.0/linux/lib/oclfpga/bin:/opt/intel/oneapi/compiler/2022.1.0/linux/bin/intel64:/opt/intel/oneapi/compiler/2022.1.0/linux/bin:/opt/intel/oneapi/clck/2021.6.0/bin/intel64:/opt/intel/oneapi/advisor/2022.1.0/bin64:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
+export CLCK_ROOT=/opt/intel/oneapi/clck/2021.6.0
+export DPCT_BUNDLE_ROOT=/opt/intel/oneapi/dpcpp-ct/2022.1.0
+export DAL_MAJOR_BINARY=1
+export ACL_BOARD_VENDOR_PATH=/opt/Intel/OpenCLFPGA/oneAPI/Boards
+export VT_SLIB_DIR=/opt/intel/oneapi/itac/2021.6.0/slib
+export FI_PROVIDER_PATH=/opt/intel/oneapi/mpi/2021.6.0//libfabric/lib/prov:/usr/lib64/libfabric
+export INTEL_PYTHONHOME=/opt/intel/oneapi/debugger/2021.6.0/dep
+export CLASSPATH=/opt/intel/oneapi/mpi/2021.6.0//lib/mpi.jar:/opt/intel/oneapi/dal/2021.6.0/lib/onedal.jar
+export FPGA_VARS_DIR=/opt/intel/oneapi/compiler/2022.1.0/linux/lib/oclfpga
+export CMPLR_ROOT=/opt/intel/oneapi/compiler/2022.1.0
+export VTUNE_PROFILER_2022_DIR=/opt/intel/oneapi/vtune/2022.3.0
+export DNNLROOT=/opt/intel/oneapi/dnnl/2022.1.0/cpu_dpcpp_gpu_dpcpp
+export INSPECTOR_2022_DIR=/opt/intel/oneapi/inspector/2022.1.0
+export CCL_ROOT=/opt/intel/oneapi/ccl/2021.6.0
+export CONDA_PYTHON_EXE=/opt/intel/oneapi/intelpython/latest/bin/python
+export GDB_INFO=/opt/intel/oneapi/debugger/2021.6.0/documentation/info/
+export CMAKE_PREFIX_PATH=/opt/intel/oneapi/vpl/2022.1.0:/opt/intel/oneapi/tbb/2021.6.0/env/..:/opt/intel/oneapi/dnnl/2022.1.0/cpu_dpcpp_gpu_dpcpp/../lib/cmake:/opt/intel/oneapi/dal/2021.6.0:/opt/intel/oneapi/compiler/2022.1.0/linux/IntelDPCPP
+export CPATH=/opt/intel/oneapi/vpl/2022.1.0/include:/opt/intel/oneapi/tbb/2021.6.0/env/../include:/opt/intel/oneapi/mpi/2021.6.0//include:/opt/intel/oneapi/mkl/2022.1.0/include:/opt/intel/oneapi/ippcp/2021.6.0/include:/opt/intel/oneapi/ipp/2021.6.0/include:/opt/intel/oneapi/dpl/2021.7.0/linux/include:/opt/intel/oneapi/dpcpp-ct/2022.1.0/include:/opt/intel/oneapi/dnnl/2022.1.0/cpu_dpcpp_gpu_dpcpp/include:/opt/intel/oneapi/dev-utilities/2021.6.0/include:/opt/intel/oneapi/dal/2021.6.0/include:/opt/intel/oneapi/ccl/2021.6.0/include/cpu_gpu_dpcpp
+export INTELFPGAOCLSDKROOT=/opt/intel/oneapi/compiler/2022.1.0/linux/lib/oclfpga
+export DALROOT=/opt/intel/oneapi/dal/2021.6.0
+export DPL_ROOT=/opt/intel/oneapi/dpl/2021.7.0
+export NLSPATH=/opt/intel/oneapi/mkl/2022.1.0/lib/intel64/locale/%l_%t/%N:/opt/intel/oneapi/compiler/2022.1.0/linux/compiler/lib/intel64_lin/locale/%l_%t/%N
+export LIBRARY_PATH=/opt/intel/oneapi/vpl/2022.1.0/lib:/opt/intel/oneapi/tbb/2021.6.0/env/../lib/intel64/gcc4.8:/opt/intel/oneapi/mpi/2021.6.0//libfabric/lib:/opt/intel/oneapi/mpi/2021.6.0//lib/release:/opt/intel/oneapi/mpi/2021.6.0//lib:/opt/intel/oneapi/mkl/2022.1.0/lib/intel64:/opt/intel/oneapi/ippcp/2021.6.0/lib/intel64:/opt/intel/oneapi/ipp/2021.6.0/lib/intel64:/opt/intel/oneapi/dnnl/2022.1.0/cpu_dpcpp_gpu_dpcpp/lib:/opt/intel/oneapi/dal/2021.6.0/lib/intel64:/opt/intel/oneapi/compiler/2022.1.0/linux/compiler/lib/intel64_lin:/opt/intel/oneapi/compiler/2022.1.0/linux/lib:/opt/intel/oneapi/clck/2021.6.0/lib/intel64:/opt/intel/oneapi/ccl/2021.6.0/lib/cpu_gpu_dpcpp
+export IPPCRYPTOROOT=/opt/intel/oneapi/ippcp/2021.6.0
+export SETVARS_COMPLETED=1
+export VT_LIB_DIR=/opt/intel/oneapi/itac/2021.6.0/lib
+export IPP_TARGET_ARCH=intel64
+export DAALROOT=/opt/intel/oneapi/dal/2021.6.0
+export DIAGUTIL_PATH=/opt/intel/oneapi/vtune/2022.3.0/sys_check/vtune_sys_check.py:/opt/intel/oneapi/dpcpp-ct/2022.1.0/sys_check/sys_check.sh:/opt/intel/oneapi/debugger/2021.6.0/sys_check/debugger_sys_check.py:/opt/intel/oneapi/compiler/2022.1.0/sys_check/sys_check.sh:/opt/intel/oneapi/advisor/2022.1.0/sys_check/advisor_sys_check.py:
+#export INTEL_LICENSE_FILE=/opt/intel/licenses:/root/intel/licenses:/opt/intel/oneapi/clck/2021.6.0/licensing:/opt/intel/licenses:/root/intel/licenses:/Users/Shared/Library/Application Support/Intel/Licenses
+export VT_ROOT=/opt/intel/oneapi/itac/2021.6.0
+export APM=/opt/intel/oneapi/advisor/2022.1.0/perfmodels
+export PYTHONPATH=/opt/intel/oneapi/advisor/2022.1.0/pythonapi
+export VTUNE_PROFILER_DIR=/opt/intel/oneapi/vtune/2022.3.0
+export MANPATH=/opt/intel/oneapi/mpi/2021.6.0/man:/opt/intel/oneapi/itac/2021.6.0/man:/opt/intel/oneapi/debugger/2021.6.0/documentation/man:/opt/intel/oneapi/compiler/2022.1.0/documentation/en/man/common:/opt/intel/oneapi/clck/2021.6.0/man::
+export ONEAPI_ROOT=/opt/intel/oneapi
+export MKLROOT=/opt/intel/oneapi/mkl/2022.1.0
 
 export LD_LIBRARY_PATH=/wrf/Library/lib:/opt/intel/oneapi/vpl/2022.1.0/lib:/opt/intel/oneapi/tbb/2021.6.0/env/../lib/intel64/gcc4.8:/opt/intel/oneapi/mpi/2021.6.0//libfabric/lib:/opt/intel/oneapi/mpi/2021.6.0//lib/release:/opt/intel/oneapi/mpi/2021.6.0//lib:/opt/intel/oneapi/mkl/2022.1.0/lib/intel64:/opt/intel/oneapi/itac/2021.6.0/slib:/opt/intel/oneapi/ippcp/2021.6.0/lib/intel64:/opt/intel/oneapi/ipp/2021.6.0/lib/intel64:/opt/intel/oneapi/dnnl/2022.1.0/cpu_dpcpp_gpu_dpcpp/lib:/opt/intel/oneapi/debugger/2021.6.0/gdb/intel64/lib:/opt/intel/oneapi/debugger/2021.6.0/libipt/intel64/lib:/opt/intel/oneapi/debugger/2021.6.0/dep/lib:/opt/intel/oneapi/dal/2021.6.0/lib/intel64:/opt/intel/oneapi/compiler/2022.1.0/linux/lib:/opt/intel/oneapi/compiler/2022.1.0/linux/lib/x64:/opt/intel/oneapi/compiler/2022.1.0/linux/lib/oclfpga/host/linux64/lib:/opt/intel/oneapi/compiler/2022.1.0/linux/compiler/lib/intel64_lin:/opt/intel/oneapi/ccl/2021.6.0/lib/cpu_gpu_dpcpp
+export PATH=/wrf/Library/bin:/opt/intel/oneapi/vtune/2022.3.0/bin64:/opt/intel/oneapi/vpl/2022.1.0/bin:/opt/intel/oneapi/mpi/2021.6.0//libfabric/bin:/opt/intel/oneapi/mpi/2021.6.0//bin:/opt/intel/oneapi/mkl/2022.1.0/bin/intel64:/opt/intel/oneapi/itac/2021.6.0/bin:/opt/intel/oneapi/intelpython/latest/bin:/opt/intel/oneapi/intelpython/latest/condabin:/opt/intel/oneapi/inspector/2022.1.0/bin64:/opt/intel/oneapi/dpcpp-ct/2022.1.0/bin:/opt/intel/oneapi/dev-utilities/2021.6.0/bin:/opt/intel/oneapi/debugger/2021.6.0/gdb/intel64/bin:/opt/intel/oneapi/compiler/2022.1.0/linux/lib/oclfpga/bin:/opt/intel/oneapi/compiler/2022.1.0/linux/bin/intel64:/opt/intel/oneapi/compiler/2022.1.0/linux/bin:/opt/intel/oneapi/clck/2021.6.0/bin/intel64:/opt/intel/oneapi/advisor/2022.1.0/bin64:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
 
 ulimit -s unlimited
 ulimit -d unlimited
